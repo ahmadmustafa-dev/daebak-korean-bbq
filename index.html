@@ -23,6 +23,19 @@
   </head>
 
   <body>
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-instagram" viewBox="0 0 24 24">
+        <rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8" />
+        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8" />
+        <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+      </symbol>
+      <symbol id="icon-facebook" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M14 8h3V4h-3c-3.3 0-5 1.9-5 5v2H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.4-1 1-1Z" />
+      </symbol>
+      <symbol id="icon-whatsapp" viewBox="0 0 24 24">
+        <path fill="currentColor" d="M17.5 14.4c-.3-.1-1.7-.9-2-.9-.3-.1-.5-.1-.7.1-.2.3-.8.9-.9 1.1-.2.2-.3.2-.6.1-.3-.1-1.2-.4-2.3-1.4-.8-.8-1.4-1.7-1.6-2-.2-.3 0-.4.1-.6l.4-.5c.1-.2.2-.3.3-.5.1-.2 0-.4 0-.5 0-.1-.7-1.7-1-2.3-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.3 5.2 4.6.7.3 1.3.5 1.8.6.7.2 1.4.2 1.9.1.6-.1 1.7-.7 2-1.4.2-.7.2-1.2.2-1.4-.1-.1-.3-.2-.6-.3Zm-5.4 7.4c-1.7 0-3.3-.4-4.8-1.2L2 22l1.4-5.2c-.9-1.5-1.3-3.2-1.3-4.9C2.1 6.5 6.6 2 12.1 2c2.6 0 5.2 1 7.1 2.9 1.9 1.9 2.9 4.4 2.9 7.1-.1 5.4-4.5 9.8-10 9.8Zm0-18.1c-4.5 0-8.2 3.7-8.2 8.2 0 1.6.5 3.2 1.4 4.5l.2.3-.8 3 3.1-.8.3.2c1.2.8 2.7 1.3 4.2 1.3 4.5 0 8.2-3.7 8.2-8.2 0-2.2-.9-4.2-2.4-5.8-1.8-1.8-3.9-2.7-6-2.7Z" />
+      </symbol>
+    </svg>
     <a class="skip-link" href="#experience">Skip to content</a>
     <div class="preloader" aria-hidden="true">
       <div class="preloader-content">
@@ -384,7 +397,10 @@
               href="https://wa.me/923077631748"
               target="_blank"
               rel="noopener noreferrer"
-              >WhatsApp</a
+              ><svg class="social-icon" aria-hidden="true" focusable="false">
+                <use href="#icon-whatsapp"></use>
+              </svg>
+              WhatsApp</a
             >
             <a
               class="btn-outline"
@@ -430,19 +446,28 @@
             href="https://wa.me/923077631748"
             target="_blank"
             rel="noopener noreferrer"
-            >WhatsApp</a
+            ><svg class="social-icon" aria-hidden="true" focusable="false">
+              <use href="#icon-whatsapp"></use>
+            </svg>
+            WhatsApp</a
           >
           <a
             href="https://www.instagram.com/daebak_koreanbbq?igsh=MTRsdWd1emNjdjh6Zg%3D%3D&utm_source=qr"
             target="_blank"
             rel="noopener noreferrer"
-            >Instagram</a
+            ><svg class="social-icon" aria-hidden="true" focusable="false">
+              <use href="#icon-instagram"></use>
+            </svg>
+            Instagram</a
           >
           <a
             href="https://www.facebook.com/p/Daebak-korean-bbq-61584930591528/"
             target="_blank"
             rel="noopener noreferrer"
-            >Facebook</a
+            ><svg class="social-icon" aria-hidden="true" focusable="false">
+              <use href="#icon-facebook"></use>
+            </svg>
+            Facebook</a
           >
         </div>
 
@@ -459,6 +484,18 @@
         <div>Defence Raya • DHA Phase 6 • Lahore</div>
       </div>
     </footer>
+
+    <a
+      class="floating-whatsapp"
+      href="https://wa.me/923077631748"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Chat with Daebak Korean BBQ on WhatsApp"
+    >
+      <svg class="floating-whatsapp-icon" aria-hidden="true" focusable="false">
+        <use href="#icon-whatsapp"></use>
+      </svg>
+    </a>
 
     <script src="./script.js" defer></script>
   </body>

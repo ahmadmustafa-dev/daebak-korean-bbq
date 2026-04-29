@@ -30,6 +30,19 @@ body {
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
+.svg-sprite {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+.social-icon {
+  width: 1.1em;
+  height: 1.1em;
+  display: inline-block;
+  flex: 0 0 auto;
+  vertical-align: -0.16em;
+}
 
 html.no-js .preloader {
   display: none;
@@ -341,6 +354,10 @@ nav.scrolled {
   flex-wrap: wrap;
 }
 .btn-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
   padding: 0.9rem 2.5rem;
   background: var(--gold);
   color: var(--black);
@@ -360,6 +377,10 @@ nav.scrolled {
   box-shadow: 0 8px 30px rgba(212, 175, 55, 0.25);
 }
 .btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
   padding: 0.9rem 2.5rem;
   background: transparent;
   color: var(--white);
@@ -860,6 +881,9 @@ footer {
   transition: color 0.3s;
   line-height: 1.6;
 }
+.footer-col a .social-icon {
+  margin-right: 0.45rem;
+}
 .footer-col a:hover {
   color: var(--gold);
 }
@@ -994,5 +1018,68 @@ html.js .reveal-left.visible {
   }
   .cta-section::before {
     margin: 1rem;
+  }
+}
+
+.floating-whatsapp {
+  position: fixed;
+  right: clamp(1rem, 3vw, 1.75rem);
+  bottom: clamp(1rem, 3vw, 1.75rem);
+  z-index: 120;
+  width: clamp(56px, 8vw, 64px);
+  height: clamp(56px, 8vw, 64px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  background: #25d366;
+  border: 0;
+  border-radius: 50%;
+  text-decoration: none;
+  box-shadow:
+    0 12px 28px rgba(0, 0, 0, 0.38),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.26);
+  isolation: isolate;
+  transition:
+    transform 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+.floating-whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  z-index: -1;
+  border-radius: inherit;
+  border: 2px solid rgba(37, 211, 102, 0.35);
+  animation: whatsapp-pulse 2s ease-out infinite;
+}
+.floating-whatsapp:hover {
+  transform: translateY(-4px) scale(1.04);
+  background: #1ebe5d;
+  box-shadow:
+    0 16px 34px rgba(0, 0, 0, 0.45),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.32);
+}
+.floating-whatsapp:active {
+  transform: translateY(-1px) scale(0.98);
+}
+.floating-whatsapp-icon {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+@keyframes whatsapp-pulse {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.82);
+  }
+  70% {
+    opacity: 0;
+    transform: scale(1.35);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.35);
   }
 }
