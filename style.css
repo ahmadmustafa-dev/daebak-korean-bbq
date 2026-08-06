@@ -472,7 +472,7 @@ section {
   width: 100%;
   aspect-ratio: 4/5;
   object-fit: cover;
-  filter: brightness(0.9);
+  filter: contrast(1.06);
   border: 1px solid rgba(212, 175, 55, 0.1);
 }
 .exp-overlay {
@@ -681,15 +681,39 @@ section {
 }
 .gallery-track {
   display: flex;
-  gap: 1.5rem;
-  padding: 0 3rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  -ms-overflow-style: none;
-  scrollbar-width: none;
+  width: max-content;
+  padding: 1rem 0;
+  animation: galleryScroll 45s linear infinite;
+  mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0,
+    #000 6%,
+    #000 94%,
+    transparent 100%
+  );
 }
-.gallery-track::-webkit-scrollbar {
-  display: none;
+.gallery-track:hover {
+  animation-play-state: paused;
+}
+.gallery-group {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0 0.75rem;
+}
+@keyframes galleryScroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-50%));
+  }
 }
 .gallery-item {
   flex-shrink: 0;
@@ -861,6 +885,22 @@ html.js .reveal-left.visible {
     justify-content: center;
     animation: none;
   }
+  .gallery-track {
+    width: auto;
+    animation: none;
+    mask-image: none;
+    -webkit-mask-image: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 3rem;
+  }
+  .gallery-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .gallery-group[aria-hidden="true"] {
+    display: none;
+  }
 }
 
 /* ── Mobile ── */
@@ -953,9 +993,20 @@ html.js .reveal-left.visible {
   border: 0;
   border-radius: 50%;
   text-decoration: none;
+  animation: wa-float 3s ease-in-out infinite;
+  box-shadow: 0 4px 25px rgba(37, 211, 102, 0.35);
   transition:
     background 0.3s ease,
     transform 0.3s ease;
+}
+.floating-whatsapp::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: #25d366;
+  animation: wa-pulse-ring 2s ease-out infinite;
+  z-index: -1;
 }
 .floating-whatsapp:hover {
   background: #20bd5a;
@@ -968,4 +1019,25 @@ html.js .reveal-left.visible {
   width: 28px;
   height: 28px;
   display: block;
+}
+
+@keyframes wa-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-4px) scale(1.05);
+  }
+}
+
+@keyframes wa-pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.6);
+    opacity: 0;
+  }
 }
