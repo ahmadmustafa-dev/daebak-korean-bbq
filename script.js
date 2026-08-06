@@ -90,7 +90,26 @@ function setupReveal() {
   targets.forEach((el) => io.observe(el));
 }
 
+function setupCleanLinks() {
+  const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+  qsa('a[href^="#"]').forEach((a) => {
+    a.addEventListener("click", (e) => {
+      const id = a.getAttribute("href");
+      if (id.length < 2) return;
+      const target = id === "#top" ? document.body : qs(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({
+        behavior: prefersReduced.matches ? "auto" : "smooth",
+        block: "start",
+      });
+      history.replaceState(null, "", window.location.pathname + window.location.search);
+    });
+  });
+}
+
 setYear();
 setupPreloader();
 setupNav();
 setupReveal();
+setupCleanLinks();
