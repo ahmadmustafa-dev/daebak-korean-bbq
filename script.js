@@ -11,9 +11,12 @@ function setupPreloader() {
   if (!preloader) return;
 
   const hide = () => preloader.classList.add("hidden");
-  window.addEventListener("load", () => {
-    window.setTimeout(hide, 2100);
-  });
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", hide, { once: true });
+  } else {
+    requestAnimationFrame(hide);
+  }
+  setTimeout(hide, 700);
 }
 
 function setupNav() {
