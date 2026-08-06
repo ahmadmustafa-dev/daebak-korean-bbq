@@ -60,7 +60,7 @@ function setupNav() {
 function setupReveal() {
   const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)");
   if (prefersReduced.matches) {
-    qsa(".reveal, .reveal-left, .menu-card").forEach((el) => {
+    qsa(".reveal, .reveal-left").forEach((el) => {
       el.classList.add("visible");
     });
     return;
@@ -87,46 +87,7 @@ function setupReveal() {
   targets.forEach((el) => io.observe(el));
 }
 
-function setupMenuTabs() {
-  const tabs = qsa(".menu-tab");
-  const cards = qsa(".menu-card");
-  const grid = qs(".menu-grid");
-  if (!tabs.length || !cards.length || !grid) return;
-  grid.classList.add("enhanced");
-
-  const setActiveTab = (active) => {
-    tabs.forEach((t) => {
-      const isActive = t === active;
-      t.classList.toggle("active", isActive);
-      t.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
-  };
-
-  const applyFilter = (filter) => {
-    cards.forEach((card) => {
-      card.classList.remove("visible");
-      const match = filter === "all" || card.dataset.category === filter;
-      card.style.display = match ? "" : "none";
-    });
-
-    const visibleCards = cards.filter((c) => c.style.display !== "none");
-    visibleCards.forEach((card, idx) => {
-      window.setTimeout(() => card.classList.add("visible"), 80 + idx * 70);
-    });
-  };
-
-  tabs.forEach((tab) => {
-    tab.addEventListener("click", () => {
-      setActiveTab(tab);
-      applyFilter(tab.dataset.filter || "all");
-    });
-  });
-
-  applyFilter("all");
-}
-
 setYear();
 setupPreloader();
 setupNav();
 setupReveal();
-setupMenuTabs();

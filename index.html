@@ -11,14 +11,32 @@
     <title>Daebak Korean BBQ — Defence Raya, Lahore</title>
 
     <link rel="icon" type="image/png" href="./assets/favicon.png" />
+    <link rel="preload" href="./assets/hero.webp" as="image" fetchpriority="high" />
+    <link rel="preload" href="./assets/logo.webp" as="image" />
 
     <script>
       document.documentElement.classList.remove("no-js");
       document.documentElement.classList.add("js");
     </script>
 
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Noto+Sans+KR:wght@300;400;500;700&display=swap"
+      />
+    </noscript>
+
     <link rel="stylesheet" href="./style.css" />
   </head>
 
@@ -40,7 +58,7 @@
     <div class="preloader" aria-hidden="true">
       <div class="preloader-content">
         <img
-          src="./assets/logo.jpeg"
+          src="./assets/logo.webp"
           alt="Daebak Korean BBQ Logo"
           class="preloader-logo"
         />
@@ -52,7 +70,7 @@
 
     <nav aria-label="Primary">
       <a class="nav-logo" href="#top">
-        <img src="./assets/logo.jpeg" alt="Daebak Korean BBQ Logo" />
+        <img src="./assets/logo.webp" alt="Daebak Korean BBQ Logo" />
       </a>
 
       <button
@@ -114,7 +132,7 @@
           <div class="exp-visual reveal-left">
             <img
               class="exp-img"
-              src="https://lh3.googleusercontent.com/gps-cs-s/APNQkAHIZuI72d82kmWCxr_tgZ4ALG8qDMP4ae-ARcCV1Dwt3M5HbvQB5L3DuRAeAqSBE8yPZCPfjxxWzHHUQqxo3dO6ahN_3LJUQIIzWVxggadBBAAQ_dZvlH4WBliid-Sw6hgok_tGHaCtb1Y=w408-h544-k-no"
+              src="./assets/bbq-grill.webp"
               alt="Premium Korean BBQ on a sizzling grill"
               loading="lazy"
               decoding="async"
@@ -228,7 +246,7 @@
         <div class="menu-pages reveal">
           <div class="menu-page-card">
             <img
-              src="./assets/Screenshot 2026-04-27 205532.png"
+              src="./assets/menu-1.webp"
               alt="Daebak KBBQ Menu — Rice & Bowls and Starters"
               loading="lazy"
               decoding="async"
@@ -236,7 +254,7 @@
           </div>
           <div class="menu-page-card">
             <img
-              src="./assets/Screenshot 2026-04-27 205558.png"
+              src="./assets/menu-2.webp"
               alt="Daebak KBBQ Menu — Korean BBQ and Main Course"
               loading="lazy"
               decoding="async"
@@ -244,7 +262,7 @@
           </div>
           <div class="menu-page-card">
             <img
-              src="./assets/Screenshot 2026-04-27 205626.png"
+              src="./assets/menu-3.webp"
               alt="Daebak KBBQ Menu — Noodles, Pizza, Burgers, Soups and Salads"
               loading="lazy"
               decoding="async"
@@ -252,7 +270,7 @@
           </div>
           <div class="menu-page-card">
             <img
-              src="./assets/Screenshot 2026-04-27 205645.png"
+              src="./assets/menu-4.webp"
               alt="Daebak KBBQ Menu — Korean Sweets and Drinks"
               loading="lazy"
               decoding="async"
@@ -274,7 +292,7 @@
         <div class="gallery-track" aria-label="Restaurant gallery">
           <div class="gallery-item reveal">
             <img
-              src="./assets/unnamed.jpg"
+              src="./assets/interior-luxury.webp"
               alt="Luxury restaurant interior with dark tones"
               loading="lazy"
               decoding="async"
@@ -283,7 +301,7 @@
           </div>
           <div class="gallery-item reveal">
             <img
-              src="./assets/unnamed (1).jpg"
+              src="./assets/interior-dining.webp"
               alt="Korean BBQ restaurant interior"
               loading="lazy"
               decoding="async"
@@ -292,7 +310,7 @@
           </div>
           <div class="gallery-item reveal">
             <img
-              src="./assets/unnamed (2).jpg"
+              src="./assets/wagyu-grill.webp"
               alt="Wagyu on a grill with smoke"
               loading="lazy"
               decoding="async"
@@ -301,7 +319,7 @@
           </div>
           <div class="gallery-item reveal">
             <img
-              src="./assets/unnamed (3).jpg"
+              src="./assets/korean-sides.webp"
               alt="Korean mandu and sides"
               loading="lazy"
               decoding="async"
@@ -314,7 +332,14 @@
       <section id="reviews" class="social-proof">
         <div class="rating-display reveal">
           <div class="section-label">Social Proof</div>
-          <div class="rating-number" aria-label="Rating 4.9 out of 5">4.9</div>
+          <a
+            class="rating-number"
+            aria-label="Rating 4.9 out of 5 — opens Google Maps listing"
+            href="https://www.google.com/maps/place/Daebak+Korean+BBQ/@31.4749592,74.4674082,17z/data=!3m1!4b1!4m6!3m5!1s0x391909f7e2e2da41:0x4bc0f64112bc9735!8m2!3d31.4749592!4d74.4699831!16s%2Fg%2F11yrwwbyb5?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+            >4.9</a
+          >
           <div class="rating-stars" aria-hidden="true">★★★★★</div>
           <div class="rating-text">Guests love the premium sizzle</div>
         </div>
@@ -418,7 +443,7 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img
-            src="./assets/logo.jpeg"
+            src="./assets/logo.webp"
             alt="Daebak Korean BBQ Logo"
             class="footer-logo"
           />
